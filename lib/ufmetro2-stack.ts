@@ -21,9 +21,6 @@ export class Ufmetro2Stack extends cdk.Stack {
       runtime: lambda.Runtime.PROVIDED_AL2, // Use the Go runtime
       handler: 'main',              // The name of the executable file in the ZIP.
       code: lambda.Code.fromAsset(path.join(__dirname, '../lambda/get-item/function.zip')), // Path to the ZIP.
-      environment: {
-        TABLE_NAME: table.tableName,
-      },
     });
 
     // Grant the Lambda function read access to the DynamoDB table.  For a GET,
